@@ -1,6 +1,10 @@
 package Collections;
 
 import Collections.ArrayListExamples.*;
+import Collections.HashSetExample.ArrayListtoHashSet;
+import Collections.HashSetExample.HashSetBook;
+import Collections.HashSetExample.HashSetMain;
+import Collections.LinkedHashSetExample.LinkedHashSetExample;
 import Collections.LinkedListExamples.BooksLinkedList;
 import Collections.LinkedListExamples.LinkedListExample;
 import Collections.ListExamples.ArrayToList;
@@ -26,5 +30,13 @@ public class CollectionMain {
 //        new ListExample();
 //        new ArrayToList();
 
+//        HashSet
+//          new HashSetMain();
+//          new ArrayListtoHashSet();
+//            new HashSetBook();
+
+//        LinkedHashSet
+//        new LinkedHashSetExample();
     }
+
 }
