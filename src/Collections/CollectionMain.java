@@ -9,6 +9,8 @@ import Collections.LinkedListExamples.BooksLinkedList;
 import Collections.LinkedListExamples.LinkedListExample;
 import Collections.ListExamples.ArrayToList;
 import Collections.ListExamples.ListExample;
+import Collections.PriorityQueueExample.PriorityQueueBookExample;
+import Collections.PriorityQueueExample.PriorityQueueExample;
 import Collections.TreeSetExamples.TreeSetBookExample;
 import Collections.TreeSetExamples.TreeSetMain;
 import Collections.TreeSetExamples.TreeSetMethods;
@@ -45,8 +47,11 @@ public class CollectionMain {
 //        TreeSetMain
 //        new TreeSetMain();
 //        new TreeSetNumber();
-//          new TreeSetMethods();
-//          new TreeSetBookExample();
+//        new TreeSetMethods();
+//        new TreeSetBookExample();
 
+//        PriorityQueueExample
+//          new PriorityQueueExample();
+          new PriorityQueueBookExample();
     }
 }
