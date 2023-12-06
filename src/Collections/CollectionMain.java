@@ -9,6 +9,10 @@ import Collections.LinkedListExamples.BooksLinkedList;
 import Collections.LinkedListExamples.LinkedListExample;
 import Collections.ListExamples.ArrayToList;
 import Collections.ListExamples.ListExample;
+import Collections.TreeSetExamples.TreeSetBookExample;
+import Collections.TreeSetExamples.TreeSetMain;
+import Collections.TreeSetExamples.TreeSetMethods;
+import Collections.TreeSetExamples.TreeSetNumber;
 
 public class CollectionMain {
     public static void printFun(){
@@ -37,6 +41,12 @@ public class CollectionMain {
 
 //        LinkedHashSet
 //        new LinkedHashSetExample();
-    }
 
+//        TreeSetMain
+//        new TreeSetMain();
+//        new TreeSetNumber();
+//          new TreeSetMethods();
+//          new TreeSetBookExample();
+
+    }
 }
