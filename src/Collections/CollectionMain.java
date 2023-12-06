@@ -1,6 +1,8 @@
 package Collections;
 
 import Collections.ArrayListExamples.*;
+import Collections.DequeExamples.DequeBookExample;
+import Collections.DequeExamples.DequeExamples;
 import Collections.HashSetExample.ArrayListtoHashSet;
 import Collections.HashSetExample.HashSetBook;
 import Collections.HashSetExample.HashSetMain;
@@ -52,6 +54,11 @@ public class CollectionMain {
 
 //        PriorityQueueExample
 //          new PriorityQueueExample();
-          new PriorityQueueBookExample();
+//          new PriorityQueueBookExample();
+
+//        DequeExamples
+//        new DequeExamples();
+          new DequeBookExample();
     }
+
 }
