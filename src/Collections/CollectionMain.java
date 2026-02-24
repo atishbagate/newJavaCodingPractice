@@ -24,14 +24,14 @@ public class CollectionMain {
 
 //        ArrayList
 //        new ArrayListExample();
-//        TypesToIterateList typesToIterateList = new TypesToIterateList();
-//        typesToIterateList.TypesToIterateListExamples();
+//        TypesToIterateList typesToIterateList =    new TypesToIterateList();
+//        typesToIterateList.TypesToIte
+////        new SynchArrayList();rateListExamples();
 //        new SortingArrayList();
-//        new SynchArrayList();
 //          new ArrayToArrayListAndViceVersa();
 
 //        LinkedList
-//        new LinkedListExample();
+        new LinkedListExample();
 //        new BooksLinkedList();
 
 //        List
@@ -58,7 +58,7 @@ public class CollectionMain {
 
 //        DequeExamples
 //        new DequeExamples();
-          new DequeBookExample();
+//          new DequeBookExample();
     }
 
 }
