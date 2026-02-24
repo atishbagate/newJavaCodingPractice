@@ -1,22 +1,6 @@
 package Collections;
 
-import Collections.ArrayListExamples.*;
-import Collections.DequeExamples.DequeBookExample;
-import Collections.DequeExamples.DequeExamples;
-import Collections.HashSetExample.ArrayListtoHashSet;
-import Collections.HashSetExample.HashSetBook;
-import Collections.HashSetExample.HashSetMain;
-import Collections.LinkedHashSetExample.LinkedHashSetExample;
-import Collections.LinkedListExamples.BooksLinkedList;
-import Collections.LinkedListExamples.LinkedListExample;
-import Collections.ListExamples.ArrayToList;
-import Collections.ListExamples.ListExample;
-import Collections.PriorityQueueExample.PriorityQueueBookExample;
-import Collections.PriorityQueueExample.PriorityQueueExample;
-import Collections.TreeSetExamples.TreeSetBookExample;
-import Collections.TreeSetExamples.TreeSetMain;
-import Collections.TreeSetExamples.TreeSetMethods;
-import Collections.TreeSetExamples.TreeSetNumber;
+import Collections.List.LinkedListExamples.LinkedListExample;
 
 public class CollectionMain {
     public static void printFun(){
