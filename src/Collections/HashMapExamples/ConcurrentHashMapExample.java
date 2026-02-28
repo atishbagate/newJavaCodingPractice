@@ -20,7 +20,11 @@ public class ConcurrentHashMapExample {
             for (int i = 0; i < 10; i++) {
                 concurrentMap.put(i, "Thread1-Value" + i);
                 System.out.println("Thread 1 added key: " + i);
-                try { Thread.sleep(50); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             }
         });
 
@@ -29,7 +33,11 @@ public class ConcurrentHashMapExample {
             for (int i = 10; i < 20; i++) {
                 concurrentMap.put(i, "Thread2-Value" + i);
                 System.out.println("Thread 2 added key: " + i);
-                try { Thread.sleep(50); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             }
         });
 
@@ -40,7 +48,11 @@ public class ConcurrentHashMapExample {
                 // It will NOT throw ConcurrentModificationException
                 int size = concurrentMap.size();
                 System.out.println("Thread 3 (Reader) sees map size: " + size);
-                try { Thread.sleep(120); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+                try {
+                    Thread.sleep(120);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
             }
         });
 
