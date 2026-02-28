@@ -18,7 +18,14 @@ public class BasicHashmapExample {
             System.out.println("key " + i.getKey() + " - " + i.getValue());
         }
 
+        System.out.println(map.get(1));
+        System.out.println(map.containsKey(1));
+        System.out.println(map.containsValue("Atish"));
 
+        map.remove(1);
+        System.out.println(map);
+        map.clear();
+        System.out.println(map);
     }
 }
 
