@@ -25,8 +25,9 @@ public  TreeSetMain() {
     while (descTreeSet.hasNext()){
         System.out.println(descTreeSet.next());
     }
+}
 
-
-
- }
+    public static void main(String[] args) {
+        new TreeSetMain();
+    }
 }

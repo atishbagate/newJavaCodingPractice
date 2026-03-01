@@ -29,4 +29,8 @@ public class TreeSetMethods {
            System.out.println(itr1.next());
        }
     }
+
+    public static void main(String[] args) {
+        new TreeSetMethods();
+    }
 }

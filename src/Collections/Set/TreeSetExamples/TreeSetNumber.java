@@ -23,4 +23,10 @@ public class TreeSetNumber {
         }
     }
 
+    public static void main(String[] args) {
+        new TreeSetNumber();
+
+
+    }
+
 }
