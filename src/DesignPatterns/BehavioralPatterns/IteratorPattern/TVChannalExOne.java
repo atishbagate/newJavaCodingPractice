@@ -3,26 +3,32 @@ package DesignPatterns.BehavioralPatterns.IteratorPattern;
 import java.util.ArrayList;
 import java.util.List;
 
-interface Iterator{
+interface Iterator {
     boolean hasNext();
+
     Object next();
 }
+
 interface ChannalCollection {
     Iterator getIterator();
 }
-class TVStation implements ChannalCollection{
+
+class TVStation implements ChannalCollection {
     private List<String> channals;
 
-    public TVStation(){
+    public TVStation() {
         channals = new ArrayList<>();
     }
-    public void addChannal(String name){
+
+    public void addChannal(String name) {
         channals.add(name);
     }
+
     @Override
     public Iterator getIterator() {
         return new ChannalIterator(channals);
     }
+
     public Iterator getReverseIterator() {
         return new reverseIterator(channals);
     }
@@ -47,8 +53,9 @@ class TVStation implements ChannalCollection{
                 return channals.get(index++);
             }
             return null;
-            }
+        }
     }
+
     // inner class for reverse iterator
     private class reverseIterator implements Iterator {
         private List<String> channals;
@@ -62,14 +69,15 @@ class TVStation implements ChannalCollection{
 
         @Override
         public boolean hasNext() {
-            return index >=0;
-    }
+            return index >= 0;
+        }
+
         @Override
         public Object next() {
-            if(hasNext()) {
+            if (hasNext()) {
                 return channals.get(index--);
             }
-            return  null;
+            return null;
         }
     }
 }
@@ -83,11 +91,11 @@ public class TVChannalExOne {
 
 //        get iterator
         Iterator iterator = tvStation.getIterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
         Iterator reverseIterator = tvStation.getReverseIterator();
-        while(reverseIterator.hasNext()){
+        while (reverseIterator.hasNext()) {
             System.out.println(reverseIterator.next());
         }
     }

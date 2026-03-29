@@ -1,17 +1,21 @@
 package DesignPatterns.BehavioralPatterns.TemplateMethodPattern;
-abstract class buildHouse{
-    public final void buildHome(){
+
+abstract class buildHouse {
+    public final void buildHome() {
         basement();
         wallAndWindows();
         Roof();
         Furniture();
         System.out.println("House build successfully");
     }
-//    fixed steps
-    private void basement(){
+
+    //    fixed steps
+    private void basement() {
         System.out.println("basement created.");
     }
+
     protected abstract void wallAndWindows();
+
     protected abstract void Roof();
 
     //    hook : optional
@@ -19,7 +23,8 @@ abstract class buildHouse{
 
     }
 }
-class cementHouse extends  buildHouse {
+
+class cementHouse extends buildHouse {
     @Override
     protected void wallAndWindows() {
         System.out.println("Building cement walls and glass windows.");
@@ -35,7 +40,8 @@ class cementHouse extends  buildHouse {
         System.out.println("Adding wooden furniture.");
     }
 }
-class tent extends  buildHouse {
+
+class tent extends buildHouse {
     @Override
     protected void wallAndWindows() {
         System.out.println("Setting up cloth walls and mesh windows.");
@@ -45,7 +51,8 @@ class tent extends  buildHouse {
     protected void Roof() {
         System.out.println("Setting up waterproof tarp roof.");
     }
-    protected  void Furniture() {
+
+    protected void Furniture() {
         System.out.println("Adding basic cooking furniture.");
     }
 }
