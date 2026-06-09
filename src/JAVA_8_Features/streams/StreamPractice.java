@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class StreamPractice {
-
+ // updated
     public static void main(String[] args) {
         System.out.println("--- Java 8 Stream API Practice ---");
 
