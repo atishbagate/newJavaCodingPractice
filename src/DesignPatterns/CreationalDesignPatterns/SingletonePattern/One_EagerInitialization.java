@@ -20,13 +20,13 @@ public class One_EagerInitialization {
         return instance;
     }
 
-    public void showMessage() {
-        System.out.println("Eager Initialization Singleton Instance accessed.");
-    }
-
     public static void main(String[] args) {
         One_EagerInitialization singleton = One_EagerInitialization.getInstance();
         singleton.showMessage();
+    }
+
+    public void showMessage() {
+        System.out.println("Eager Initialization Singleton Instance accessed.");
     }
 
 }

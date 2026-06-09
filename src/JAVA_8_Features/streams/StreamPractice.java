@@ -26,7 +26,7 @@ public class StreamPractice {
 
     private static void findSecondHighest(List<Integer> numbers) {
         System.out.println("\n1. Second Highest Number in " + numbers);
-        
+
         Integer secondHighest = numbers.stream()
                 .distinct() // Remove duplicates like the two 50s
                 .sorted((a, b) -> b - a) // Sort in descending order
@@ -39,7 +39,7 @@ public class StreamPractice {
 
     private static void countCharacterFrequency(String input) {
         System.out.println("\n2. Character frequency in string: '" + input + "'");
-        
+
         Map<Character, Long> frequencyMap = input.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -49,7 +49,7 @@ public class StreamPractice {
 
     private static void findDuplicates(List<Integer> numbers) {
         System.out.println("\n3. Find duplicate elements in " + numbers);
-        
+
         // Group by element and count occurrences, then filter those with count > 1
         List<Integer> duplicates = numbers.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))

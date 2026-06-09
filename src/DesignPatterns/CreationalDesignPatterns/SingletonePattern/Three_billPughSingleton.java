@@ -8,20 +8,20 @@ public class Three_billPughSingleton {
     private Three_billPughSingleton() {
     }
 
-    // Inner static class is only loaded when getInstance() is called
-    private static class SingletonHelper {
-        private static final Three_billPughSingleton INSTANCE = new Three_billPughSingleton();
-    }
-
     public static Three_billPughSingleton getInstance() {
         return SingletonHelper.INSTANCE;
     }
+
+    public static void main(String[] args) {
+        SingletonHelper.INSTANCE.showMessage();
+    }
+
     public void showMessage() {
         System.out.println("BillPughSingleton Singleton Instance accessed.");
     }
 
-
-    public static void main(String[] args) {
-        SingletonHelper.INSTANCE.showMessage();
+    // Inner static class is only loaded when getInstance() is called
+    private static class SingletonHelper {
+        private static final Three_billPughSingleton INSTANCE = new Three_billPughSingleton();
     }
 }
