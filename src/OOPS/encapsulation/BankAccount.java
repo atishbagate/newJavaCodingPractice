@@ -43,6 +43,7 @@ public class BankAccount {
             BankAccount myAcc = new BankAccount(1, 10.3);
             System.out.println("account " + myAcc.getAccountNumber());
             myAcc.withdraw(4.0);
+            myAcc.deposite(80);
             System.out.println("Curr balance " + myAcc.getBalance());
         }
 }
