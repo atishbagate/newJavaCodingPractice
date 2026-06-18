@@ -11,8 +11,8 @@ public class Student {
         this.age = age;
     }
 
-    void DisplayInfo(){
-        System.out.println("student details  : "+this.rollNo+" : "+this.name+" : "+this.age +" : "+this.name);
+    void DisplayInfo() {
+        System.out.println("student details  : " + this.rollNo + " : " + this.name + " : " + this.age + " : " + this.name);
     }
 }
 
