@@ -41,3 +41,19 @@ The class that inherits the properties is called the **Subclass** (or Child/Deri
 
 ### Q6: What is "Method Hiding"?
 **Answer:** When a parent class and a child class both have a `static` method with the same signature, it is not considered Method Overriding. It is called **Method Hiding**. The method that gets executed depends on the **reference type** at compile-time, not the actual object type at run-time (because static methods are resolved at compile-time).
+
+
+
+# Create a markdown file containing the structured technical interview questions for Java Inheritance.
+md_content = """# Java Inheritance Interview Guide (2-3 Years Experience)
+
+This comprehensive guide compiles advanced Java inheritance interview questions, core mechanics, edge cases, and architectural considerations frequently tested by top-tier MNCs.
+
+---
+
+## 1. Core Mechanics & Polymorphism
+
+### Q1. Variable Shadowing vs. Method Overriding
+**Question:** What happens when a subclass defines an instance variable with the exact same name as an instance variable in its superclass? How does this differ from method overriding?
+
+**Code Snippet:**

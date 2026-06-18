@@ -10,7 +10,8 @@ public class CollectionMain {
 //        new ArrayListExample();
 //        TypesToIterateList typesToIterateList =    new TypesToIterateList();
 //        typesToIterateList.TypesToIte
-////        new SynchArrayList();rateListExamples();
+//       new SynchArrayList();
+//       rateListExamples();
 //        new SortingArrayList();
 //          new ArrayToArrayListAndViceVersa();
 

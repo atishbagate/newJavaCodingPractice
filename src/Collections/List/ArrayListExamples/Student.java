@@ -10,4 +10,9 @@ public class Student {
         this.name = name;
         this.age = age;
     }
+
+    void DisplayInfo(){
+        System.out.println("student details  : "+this.rollNo+" : "+this.name+" : "+this.age +" : "+this.name);
+    }
 }
+
