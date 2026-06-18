@@ -23,7 +23,7 @@ public class ArrayListElectronicStore {
 
 //        finding the position
         int position = shopList.indexOf("Smartphone");
-
+        System.out.println("position of smartphone is :"+position);
         System.out.println("final list " + shopList);
         shopList.clear();
 

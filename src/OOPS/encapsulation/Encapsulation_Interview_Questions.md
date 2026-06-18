@@ -3,7 +3,8 @@
 ## 1. What is Encapsulation?
 Encapsulation is the mechanism of **wrapping the data (variables)** and **code acting on the data (methods)** together as a single unit (like a class).
 
-In encapsulation, the variables of a class are hidden from other classes and can be accessed only through the methods of their current class. Therefore, it is also known as **data hiding**.
+In encapsulation, the variables of a class are hidden from other classes and can be accessed only through the methods of their current class.
+ Therefore, it is also known as **data hiding**.
 
 **Real-World Analogy:** A medical capsule. The medicine (data) is hidden and protected inside the outer shell (class/methods).
 
