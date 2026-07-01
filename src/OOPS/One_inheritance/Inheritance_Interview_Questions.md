@@ -44,13 +44,6 @@ The class that inherits the properties is called the **Subclass** (or Child/Deri
 
 
 
-# Create a markdown file containing the structured technical interview questions for Java Inheritance.
-md_content = """# Java Inheritance Interview Guide (2-3 Years Experience)
-
-This comprehensive guide compiles advanced Java inheritance interview questions, core mechanics, edge cases, and architectural considerations frequently tested by top-tier MNCs.
-
----
-
 ## 1. Core Mechanics & Polymorphism
 
 ### Q1. Variable Shadowing vs. Method Overriding

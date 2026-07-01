@@ -30,4 +30,9 @@ public class PriorityQueueExample {
             System.out.println(itr2.next());
         }
     }
+
+    public static void main(String[] args) {
+        System.out.println("priority queue example");
+        new PriorityQueueExample();
+    }
 }

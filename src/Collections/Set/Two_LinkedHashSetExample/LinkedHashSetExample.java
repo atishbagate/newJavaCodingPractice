@@ -1,4 +1,4 @@
-package Collections.Set.LinkedHashSetExample;
+package Collections.Set.Two_LinkedHashSetExample;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;

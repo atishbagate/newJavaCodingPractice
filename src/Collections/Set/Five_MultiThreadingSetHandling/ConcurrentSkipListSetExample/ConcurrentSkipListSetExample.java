@@ -1,4 +1,4 @@
-package Collections.Set.ConcurrentSkipListSetExample;
+package Collections.Set.Five_MultiThreadingSetHandling.ConcurrentSkipListSetExample;
 
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentSkipListSet;

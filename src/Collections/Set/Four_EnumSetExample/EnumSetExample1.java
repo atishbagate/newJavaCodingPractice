@@ -1,4 +1,4 @@
-package Collections.Set.EnumSetExample;
+package Collections.Set.Four_EnumSetExample;
 
 import java.util.EnumSet;
 import java.util.Set;

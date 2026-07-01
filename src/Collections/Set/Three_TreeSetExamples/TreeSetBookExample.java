@@ -1,4 +1,4 @@
-package Collections.Set.TreeSetExamples;
+package Collections.Set.Three_TreeSetExamples;
 
 import java.util.Set;
 import java.util.TreeSet;

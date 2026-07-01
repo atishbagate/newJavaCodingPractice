@@ -1,4 +1,4 @@
-package Collections.Set.CopyOnWriteArraySetExample;
+package Collections.Set.Five_MultiThreadingSetHandling.CopyOnWriteArraySetExample;
 
 import java.util.Iterator;
 import java.util.Set;

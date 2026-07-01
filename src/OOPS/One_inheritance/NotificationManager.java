@@ -1,4 +1,4 @@
-package OOPS.inheritance;
+package OOPS.One_inheritance;
 
 public class NotificationManager {
 

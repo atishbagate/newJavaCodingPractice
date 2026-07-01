@@ -1,6 +1,5 @@
-package Collections.Set.LinkedHashSetExample;
+package Collections.Set.Two_LinkedHashSetExample;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
