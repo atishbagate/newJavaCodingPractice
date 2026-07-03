@@ -11,22 +11,25 @@ package JAVA_8_Features.One_Functional_Interface;
 
 //1. Consumer
 @FunctionalInterface
-interface Consumer<T>{
+interface Consumer<T> {
     void accept(T input);
 }
 
 @FunctionalInterface
-interface Supplier<T>{
+interface Supplier<T> {
     T get();
 }
+
 @FunctionalInterface
-interface Functional<T,R>{
+interface Functional<T, R> {
     R function(T input);
 }
+
 @FunctionalInterface
-interface Predicate<T>{
+interface Predicate<T> {
     boolean test(T t);
 }
+
 // custom fnuctional interface
 @FunctionalInterface
 interface MathOperation {

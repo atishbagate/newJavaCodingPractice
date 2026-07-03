@@ -1,4 +1,4 @@
-package JAVA_8_Features.streams;
+package JAVA_8_Features.Three_streams;
 
 import java.util.Arrays;
 import java.util.Comparator;

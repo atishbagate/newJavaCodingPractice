@@ -5,18 +5,6 @@ public class ConstructorExecution {
         System.out.println("Constructor Execution");
     }
 
-    public static class StaticInnerClass {
-        public StaticInnerClass() {
-            System.out.println("StaticInnerClass");
-        }
-
-    }
-    public class NonStaticInnerClass {
-        public NonStaticInnerClass() {
-            System.out.println("NonStaticInnerClass");
-        }
-    }
-
     public static void main(String[] args) {
         System.out.println("main method");
 
@@ -27,8 +15,21 @@ public class ConstructorExecution {
 
         // We first need an instance of the outer class, which runs its constructor,
         // and then the inner class constructor runs
-      ConstructorExecution CE =  new ConstructorExecution();
-      ConstructorExecution.NonStaticInnerClass inner =  CE. new NonStaticInnerClass();
+        ConstructorExecution CE = new ConstructorExecution();
+        ConstructorExecution.NonStaticInnerClass inner = CE.new NonStaticInnerClass();
 
+    }
+
+    public static class StaticInnerClass {
+        public StaticInnerClass() {
+            System.out.println("StaticInnerClass");
+        }
+
+    }
+
+    public class NonStaticInnerClass {
+        public NonStaticInnerClass() {
+            System.out.println("NonStaticInnerClass");
+        }
     }
 }

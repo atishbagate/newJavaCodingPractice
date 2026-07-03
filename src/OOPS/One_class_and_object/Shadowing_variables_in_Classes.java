@@ -24,9 +24,18 @@ public class Shadowing_variables_in_Classes {
     // Layer 3: Outer Class Instance Field (Heap)
     private int value = 10;
 
-    public class InnerClass{
+    public static void main(String[] args) {
+        Shadowing_variables_in_Classes outer = new Shadowing_variables_in_Classes();
+        Shadowing_variables_in_Classes.InnerClass inner = outer.new InnerClass();
+
+        // Pass 30 into the method
+        inner.printValues(30);
+    }
+
+    public class InnerClass {
         // Layer 2: Inner Class Instance Field (Heap)
         private int value = 20;
+
         public void printValues(int value) {
             // Layer 1: Method Parameter / Local Variable (Stack)
             // Passed in as 30
@@ -37,13 +46,5 @@ public class Shadowing_variables_in_Classes {
 
             System.out.println("3. Outer Class Field: " + Shadowing_variables_in_Classes.this.value);
         }
-    }
-
-    public static void main(String[] args) {
-        Shadowing_variables_in_Classes outer = new Shadowing_variables_in_Classes();
-        Shadowing_variables_in_Classes.InnerClass inner = outer.new InnerClass();
-
-        // Pass 30 into the method
-        inner.printValues(30);
     }
 }
