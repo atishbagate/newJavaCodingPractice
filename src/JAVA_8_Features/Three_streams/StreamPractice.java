@@ -1,13 +1,10 @@
 package JAVA_8_Features.Three_streams;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.sql.Array;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamPractice {
 
@@ -36,8 +33,26 @@ public class StreamPractice {
 
         // 1. Find the highest/second-highest number
         // findSecondHighest(numbers);
+//        Question: Find the sum of all even numbers in a list of integers. numbers
+//          SumOfEvenSum(numbers);
+//
+//        Question: You are given a list of strings representing names, like this:
+//        performThreeActions();
+//        The Task: Write a one-line Stream pipeline that does three things:
+//        1. Converts all the names to uppercase.
+//        2. Removes any duplicate names.
+//        3. Collects the final result back into a List.
 
-        // 2. Count the frequency of characters in a String
+
+//        Question: Imagine you are working on a system where you have a list of Teams,
+//        and each Team has a list of member names.
+//        The Task: Write a one-line Stream pipeline that takes this nested structure
+//        and produces a single,flat List<String> containing all the unique names,
+//        sorted alphabetically.
+
+        multipleListOfNames();
+
+//        2. Count the frequency of characters in a String
         // countCharacterFrequency(input);
 
         // 3. Find duplicate elements in a List
@@ -62,17 +77,40 @@ public class StreamPractice {
         // partitionEmployeesBySalary(employees);
     }
 
-    private static void findSecondHighest(List<Integer> numbers) {
-        System.out.println("\n1. Second Highest Number in " + numbers);
+//    private static void findSecondHighest(List<Integer> numbers) {
+//        System.out.println("\n1. Second Highest Number in " + numbers);
+//
+//        Integer secondHighest = numbers.stream()
+//                .distinct() // Remove duplicates like the two 50s
+//                .sorted((a, b) -> b - a) // Sort in descending order
+//                .skip(1) // Skip the first (highest) element
+//                .findFirst() // Get the second one
+//                .orElse(-1);
+//
+//        System.out.println("Result: " + secondHighest);
+//    }
 
-        Integer secondHighest = numbers.stream()
-                .distinct() // Remove duplicates like the two 50s
-                .sorted((a, b) -> b - a) // Sort in descending order
-                .skip(1) // Skip the first (highest) element
-                .findFirst() // Get the second one
-                .orElse(-1);
+//    private static void SumOfEvenSum(List<Integer> numbers) {
+//        int SumOfEvenNumbers = numbers.stream().filter(n -> n % 2 == 0).reduce(0, Integer::sum);
+//        System.out.println("Sum of Even members list: " + SumOfEvenNumbers);
+//    }
 
-        System.out.println("Result: " + secondHighest);
+    //    private static void performThreeActions() {
+//        List<String> NameList =  Arrays.asList("ATish", "BaGate", "ChetaN","EnginneR", "BaGate", "DOctor");
+//        List<String> updatedNameList = NameList.stream().map(String::toLowerCase).distinct().sorted().map(String::toUpperCase).collect(Collectors.toList());
+//        System.out.println("--- Perform three actions ---"+updatedNameList);
+//    }
+    private static void multipleListOfNames() {
+        List<List<String>> teamOrders = Arrays.asList(
+                Arrays.asList("Amit", "Neha"),
+                Arrays.asList("Vikram", "Rahul", "Priya"),
+                Arrays.asList("Amit", "Priya")
+        );
+        teamOrders.stream()
+                .flatMap(team -> team.stream())
+                .distinct()
+
+                .forEach(System.out::println);
     }
 
     private static void countCharacterFrequency(String input) {
