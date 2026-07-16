@@ -77,7 +77,11 @@ In Java, the ultimate parent class for all errors and exceptions is java.lang.Th
   we can use finally without catch also.
   uses - finally block is used to close the connections or resource close.
 
+Throw keyword :
+the main definition of throw keyword is : that user is creating manually unchecked exception object.
+and sending that object to JVMs default exception handler.always
+we can throw both checked and unchecked exceptions, but most time customised & used exception is used.always
+after throw there should no statement should written.
 
- Throw keyward :
 
 
