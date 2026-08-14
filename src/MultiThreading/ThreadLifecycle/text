@@ -1,0 +1,76 @@
+public class DownloadManagerPractice {
+
+    // Shared disk lock
+    private static final Object DISK_LOCK = new Object();
+    // User approval lock
+    private static final Object AUTHORIZATION_LOCK = new Object();
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // Worker Thread: Simulates the file download task
+        Thread downloader = new Thread(() -> {
+            try {
+                // STAGE 2: RUNNABLE -> Simulating active work
+                System.out.println("[Downloader]: Starting file download...");
+
+                // STAGE 3: TIMED_WAITING -> Network latency delay
+                System.out.println("[Downloader]: Simulating network latency (sleeping)...");
+                Thread.sleep(300);
+
+                // STAGE 4: BLOCKED -> Trying to acquire DISK_LOCK
+                System.out.println("[Downloader]: Requesting access to write to disk...");
+                synchronized (DISK_LOCK) {
+
+                    // STAGE 5: WAITING -> Waiting for user permission
+                    System.out.println("[Downloader]: Disk access granted. Waiting for user authorization...");
+                    synchronized (AUTHORIZATION_LOCK) {
+                        AUTHORIZATION_LOCK.wait();
+                    }
+
+                    System.out.println("[Downloader]: Authorization received! Writing file to disk...");
+                }
+
+                System.out.println("[Downloader]: Download completed successfully!");
+
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        });
+
+        // 1. Check state before starting
+        System.out.println("1. Initial state: " + downloader.getState()); // Expect: NEW
+
+        // Lock the disk so the downloader gets BLOCKED when it reaches stage 4
+        synchronized (DISK_LOCK) {
+
+            // 2. Start the downloader
+            downloader.start();
+            System.out.println("2. State after start(): " + downloader.getState()); // Expect: RUNNABLE
+
+            // Wait for downloader to hit network sleep
+            Thread.sleep(100);
+            System.out.println("3. State during network latency: " + downloader.getState()); // Expect: TIMED_WAITING
+
+            // Wait for downloader to finish sleeping and attempt disk access
+            Thread.sleep(300);
+            System.out.println("4. State while disk is locked by main: " + downloader.getState()); // Expect: BLOCKED
+
+        } // Release DISK_LOCK here
+
+        // Give downloader time to enter AUTHORIZATION_LOCK.wait()
+        Thread.sleep(100);
+        System.out.println("5. State waiting for user authorization: " + downloader.getState()); // Expect: WAITING
+
+        // Grant authorization
+        synchronized (AUTHORIZATION_LOCK) {
+            System.out.println("\n[Main]: Granting user authorization...");
+            AUTHORIZATION_LOCK.notify();
+        }
+
+        // Wait for downloader thread to finish execution completely
+        downloader.join();
+
+        // 6. Check state after completion
+        System.out.println("6. Final state after join(): " + downloader.getState()); // Expect: TERMINATED
+    }
+}
