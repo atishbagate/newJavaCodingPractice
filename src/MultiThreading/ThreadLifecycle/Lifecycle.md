@@ -85,17 +85,8 @@ synchronized (sharedResource) {
 
 ---
 
-## Stage 5: `WAITING` – "Call Me When You're Done"
+## Stage 5: `WAITING` – "Call Me When You 
 
-The manager finally leaves, and Thready enters the room.
-
-Now he realizes he can't complete the report until his coworker, **Data-Bot**, sends him the required information.
-
-Instead of checking every second, he simply says:
-
-> **"Notify me when you're done."**
-
-He waits indefinitely until someone wakes him up.
 
 This is the **WAITING** state.
 
