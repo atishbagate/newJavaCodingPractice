@@ -88,3 +88,31 @@ ThreadPoolExecutor resilientExecutor = new ThreadPoolExecutor(
 
 * **Bounded Resource Ceiling:** Maximum memory is strictly bounded ($\le 64\text{ threads} \times 1\text{MB}$ stack + $500\text{ task references}$ on heap).
 * **Backpressure via `CallerRunsPolicy`:** When the $500$-capacity queue and $64$ threads saturate, incoming tasks run directly on the submitting caller/HTTP threads. This slows down request acceptance at the edge, protecting both the JVM and the downstream database from collapse.
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                      WHY JAVA BUILT-IN EXECUTORS CRASH IN PRODUCTION                              │
+└───────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+ [ FAILURE MODE A: Executors.newFixedThreadPool(N) ]
+  Incoming Tasks (1000/s) ──► [ LinkedBlockingQueue (Integer.MAX_VALUE) ] ──► [ N Fixed Workers ]
+                                     │ (Tasks pile up infinitely)
+                                     ▼
+                              💥 java.lang.OutOfMemoryError: Java heap space
+
+
+ [ FAILURE MODE B: Executors.newCachedThreadPool() ]
+  Incoming Tasks (1000/s) ──► [ SynchronousQueue (0 Capacity) ] ──► [ Unbounded OS Threads ]
+                                     │ (Spawns 1000s of Native Threads)
+                                     ▼
+                              💥 java.lang.OutOfMemoryError: unable to create new native thread
+
+
+ [ THE RESILIENT FIX: Custom Bounded ThreadPoolExecutor ]
+  Incoming Tasks ──► [ Core Workers ] ──► [ Bounded ArrayQueue ] ──► [ Max Workers ]
+                                                                             │ (When Saturated)
+                                                                             ▼
+                                                                  🛡️ CallerRunsPolicy
+                                                                  (Natural Backpressure)
+Comparison
+
+\\\
