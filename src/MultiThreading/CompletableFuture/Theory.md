@@ -24,8 +24,6 @@
 * `whenComplete(BiConsumer<T, Throwable>)`: Inspects outcome/error without modifying return value.
 
 
-
-
 ---
 subtopics :
 # 6.1 Creation
@@ -72,3 +70,13 @@ allOf executes multiple independent background tasks in parallel and waits until
     Return Type: CompletableFuture.allOf(...) returns CompletableFuture<Void>.
     Execution: All passed tasks run concurrently on background threads.
     Retrieving Data: Call .join() on individual tasks after allOf.join() finishes to safely extract their results without waiting sequentially.
+
+
+CompletableFuture.anyOf Example :
+CompletableFuture.anyOf runs multiple asynchronous tasks concurrently and completes as soon as any one of them finishes,
+ returning the result of the fastest task.
+
+ Core Takeaways for anyOf
+ Return Type: Returns CompletableFuture<Object> because the competing futures can theoretically return different data types.
+ Redundancy & Latency Optimization: Ideal when querying redundant servers, replicas, or caches where you only care about the fastest successful response.
+ Remaining Tasks: The other tasks continue running in the background until completion unless explicitly cancelled.
